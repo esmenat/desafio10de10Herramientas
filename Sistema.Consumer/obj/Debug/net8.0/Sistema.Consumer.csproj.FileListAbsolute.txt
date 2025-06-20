@@ -1,0 +1,12 @@
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\bin\Debug\net8.0\Sistema.Consumer.deps.json
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\bin\Debug\net8.0\Sistema.Consumer.dll
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\bin\Debug\net8.0\Sistema.Consumer.pdb
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\Sistema.Consumer.csproj.AssemblyReference.cache
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\Sistema.Consumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\Sistema.Consumer.AssemblyInfoInputs.cache
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\Sistema.Consumer.AssemblyInfo.cs
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\Sistema.Consumer.csproj.CoreCompileInputs.cache
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\Sistema.Consumer.dll
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\refint\Sistema.Consumer.dll
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\Sistema.Consumer.pdb
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.Consumer\obj\Debug\net8.0\ref\Sistema.Consumer.dll

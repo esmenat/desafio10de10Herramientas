@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "P+7Z4lW17rPWxLyCduT0Qr5X3JFZuCA0nHOqjJfaRk0=",
+  "Source": "Logs.API",
+  "BasePath": "_content/Logs.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

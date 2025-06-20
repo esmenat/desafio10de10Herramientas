@@ -1,0 +1,91 @@
+﻿@model Sistema.Modelos.Modelos.MantenimientoProgramado
+@using Sistema.Modelos;
+@using Sistema.Modelos.Modelos;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MantenimientoProgramado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label"></label>
+                <input asp-for="Codigo" class="form-control" readonly ="readonly"/>
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaProgramada" class="control-label"></label>
+                <input asp-for="FechaProgramada" class="form-control" />
+                <span asp-validation-for="FechaProgramada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaRealizada" class="control-label"></label>
+                <input asp-for="FechaRealizada" class="form-control" />
+                <span asp-validation-for="FechaRealizada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select asp-for="Tipo" class="form-control">
+                    <option value="">Seleccione un tipo</option>
+                    @foreach (var item in Enum.GetValues(typeof(MantenimientoProgramado.TipoMantenimiento)))
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kilometraje" class="control-label"></label>
+                <input asp-for="Kilometraje" class="form-control" />
+                <span asp-validation-for="Kilometraje" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CamionCodigo" class="control-label">Camión</label>
+                <select asp-for="CamionCodigo" class="form-control" asp-items="ViewBag.Camiones">
+                    <option value="">Seleccione un camión</option>
+                </select>
+                <span asp-validation-for="CamionCodigo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TallerCodigo" class="control-label">Taller</label>
+                <select asp-for="TallerCodigo" class="form-control" asp-items="ViewBag.Talleres">
+                    <option value="">Seleccione un taller</option>
+                </select>
+                <span asp-validation-for="TallerCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" class="form-control">
+                    <option value="">Seleccione un estado de mantenimiento</option>
+                    @foreach (var item in Enum.GetValues(typeof(MantenimientoProgramado.EstadoMantenimiento)))
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,70 @@
+﻿@model Sistema.Modelos.Modelos.Licencia
+@using Sistema.Modelos.Modelos;
+@using Sistema.Modelos;
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Licencia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TipoLicencia" class="control-label"></label>
+                <select asp-for="TipoLicencia" class="form-control">
+                    <option value="">Seleccione un tipo de licencia</option>
+                    @foreach (var item in Enum.GetValues(typeof(Licencia.Tipo)))
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+                <span asp-validation-for="TipoLicencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" class="form-control">
+                    <option value="">Seleccione un estado</option>
+                    @foreach (var item in Enum.GetValues(typeof(Licencia.EstadoLicencia)))
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FechaEmision" class="control-label"></label>
+                <input asp-for="FechaEmision" class="form-control" />
+                <span asp-validation-for="FechaEmision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaVencimiento" class="control-label"></label>
+                <input asp-for="FechaVencimiento" class="form-control" />
+                <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConductorCodigo" class="control-label">Conductor</label>
+                <select asp-for="ConductorCodigo" class="form-control" asp-items="ViewBag.Conductores">
+                    <option value="">Seleccione un conductor</option>
+                </select>
+                <span asp-validation-for="ConductorCodigo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

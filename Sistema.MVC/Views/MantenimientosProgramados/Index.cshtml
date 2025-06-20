@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Sistema.Modelos.Modelos.MantenimientoProgramado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaProgramada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRealizada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kilometraje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CamionCodigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TallerCodigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaProgramada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRealizada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kilometraje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CamionCodigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TallerCodigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Codigo }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Codigo }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Codigo })
+                @using (Html.BeginForm("RealizarMantenimiento", "MantenimientosProgramados", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("id", item.Codigo) <!-- Aseguramos que el id se pase como un campo oculto -->
+                    <button type="submit" class="btn btn-success">Realizar Mantenimiento</button>
+                }
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

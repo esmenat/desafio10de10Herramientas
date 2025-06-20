@@ -1,0 +1,64 @@
+﻿@model Sistema.Modelos.Modelos.Taller
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Taller</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+        <dt class = "col-sm-2">
+           Capacidad Máxima
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CapacidadMaximaDeReparacionesSimultaneas)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mantenimientos A Realizar</th>
+            <th>Fecha Programada</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mantenimiento in Model.MantenimientosProgramados)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-controller="MantenimientosProgramados" asp-route-id="@mantenimiento.Codigo">@mantenimiento.Descripcion</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-controller="MantenimientosProgramados" asp-route-id="@mantenimiento.Codigo">@mantenimiento.FechaProgramada</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

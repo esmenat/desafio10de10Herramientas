@@ -1,0 +1,81 @@
+﻿@model Sistema.Modelos.Modelos.Conductor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Conductor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nacionalidad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoSangre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoSangre)
+        </dd>
+        <dt class="col-sm-2">
+            Camion Que Maneja
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Camion.Placa)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tipo Licencia</th>
+            <th>Fecha Emisión</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var licencia in Model.Licencias)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-controller="Licencias" asp-route-id="@licencia.Codigo">@licencia.TipoLicencia</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-controller="Licencias" asp-route-id="@licencia.Codigo">@licencia.FechaEmision</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

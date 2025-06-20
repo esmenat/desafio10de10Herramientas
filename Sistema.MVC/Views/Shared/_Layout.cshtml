@@ -1,0 +1,159 @@
+﻿@{
+    Layout = null;
+    var isLoginPage = Context.Request.Path.StartsWithSegments("/Login");
+
+   
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema.MVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Sistema.MVC.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sistema.MVC</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                       
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Camiones" asp-action="Index">Camiones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Conductores" asp-action="Index">Conductores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Licencias" asp-action="Index">Licencias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MantenimientosProgramados" asp-action="Index">Mantenimientos Programados</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Talleres" asp-action="Index">Talleres</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="TiposLogs" asp-action="Index">Tipo Log</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="RegistrosLogs" asp-action="Index">Registro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reporte" asp-action="Index">Reporte</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Icono de campanita y notificaciones -->
+            <div class="nav-item dropdown">
+                <a class="nav-link text-dark" href="#" id="notificaciones" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-bell"></i>
+                    <span id="badge-alerts" class="badge bg-danger"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificaciones" id="alerta-lista">
+                    <!-- Las alertas se cargarán aquí -->
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+       
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Sistema.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            // Cargar alertas de mantenimiento al inicio cuando la página se carga
+            $.ajax({
+                url: '/RiesgoFallo/CamionesProximosMantenimiento',
+                method: 'GET',
+                success: function (data) {
+                    $('#alerta-lista').html('');  // Limpiar la lista de alertas
+                    if (data && data.length > 0) {
+                        data.forEach(function (mantenimiento) {
+                            // Obtener el nombre del tipo de mantenimiento
+                            var tipoMantenimiento = mantenimiento.tipo === 1 ? 'Preventivo' : 'Correctivo';  // 1 = Preventivo, 2 = Correctivo
+                            // Asignar el color basado en el tipo
+                            var alertClass = tipoMantenimiento === 'Preventivo' ? 'alert-warning' : 'alert-danger';  // Amarillo para Preventivo, Rojo para Correctivo
+
+                            var alertaHtml = `<li class="dropdown-item">
+                                                      <div class="alert ${alertClass} mb-1">
+                                                          <strong>Atención:</strong> El camión ${mantenimiento.camion.placa} está próximo a necesitar mantenimiento (Descripción: ${mantenimiento.descripcion}).
+                                                      </div>
+                                                  </li>`;
+                            $('#alerta-lista').append(alertaHtml);
+                        });
+                        // Actualizar el contador de alertas
+                        $('#badge-alerts').text(data.length);
+                        if (data.length > 0) {
+                            $('#badge-alerts').show(); // Mostrar badge si hay alertas
+                        }
+                    } else {
+                        $('#badge-alerts').hide();  // Ocultar el badge si no hay alertas
+                    }
+                }
+            });
+
+            // Cargar las alertas cuando se hace clic en el ícono de la campanita
+            $('#notificaciones').click(function () {
+                $.ajax({
+                    url: '/RiesgoFallo/CamionesProximosMantenimiento',
+                    method: 'GET',
+                    success: function (data) {
+                        $('#alerta-lista').html('');  // Limpiar la lista de alertas
+                        if (data && data.length > 0) {
+                            data.forEach(function (mantenimiento) {
+                                // Obtener el nombre del tipo de mantenimiento
+                                var tipoMantenimiento = mantenimiento.tipo === 1 ? 'Preventivo' : 'Correctivo';  // 1 = Preventivo, 2 = Correctivo
+                                // Asignar el color basado en el tipo
+                                var alertClass = tipoMantenimiento === 'Preventivo' ? 'alert-warning' : 'alert-danger';  // Amarillo para Preventivo, Rojo para Correctivo
+
+                                var alertaHtml = `<li class="dropdown-item">
+                                                          <div class="alert ${alertClass} mb-1">
+                                                              <strong>Atención:</strong> El camión ${mantenimiento.camion.placa} está próximo a necesitar mantenimiento (Descripción: ${mantenimiento.descripcion}).
+                                                          </div>
+                                                      </li>`;
+                                $('#alerta-lista').append(alertaHtml);
+                            });
+                            // Actualizar el contador de alertas
+                            $('#badge-alerts').text(data.length);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>

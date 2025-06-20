@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "W4pqSv1vfVa2EeGssGK23L0AucLA6AFPKif2F1bvmbI=",
+  "Source": "GestionSensores.API",
+  "BasePath": "_content/GestionSensores.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

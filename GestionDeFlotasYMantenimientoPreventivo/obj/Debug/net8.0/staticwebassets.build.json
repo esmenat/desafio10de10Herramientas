@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "7gLkPe7dAt9qnPpK52FokLXq57fcfdsAD1EsTmiT0qc=",
+  "Source": "GestionMaestros.API",
+  "BasePath": "_content/GestionMaestros.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

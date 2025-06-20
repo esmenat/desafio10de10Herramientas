@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "GestionDeFlotasYMantenimientoPreventivo\\GestionMaestros.API.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "Logs.API\\Logs.API.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "Sistema.MVC\\Sistema.MVC.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
