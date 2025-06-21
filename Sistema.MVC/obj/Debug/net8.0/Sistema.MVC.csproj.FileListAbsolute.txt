@@ -258,3 +258,4 @@ C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYManteni
 C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.MVC\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.MVC\bin\Debug\net8.0\SixLabors.ImageSharp.dll
 C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.MVC\bin\Debug\net8.0\de\PdfSharpCore.resources.dll
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\Sistema.MVC\obj\Debug\net8.0\Sistema.MVC.sourcelink.json

@@ -271,3 +271,4 @@ C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYManteni
 C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\GestionDeFlotasYMantenimientoPreventivo\obj\Debug\net8.0\GestionMaestros.API.pdb
 C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\GestionDeFlotasYMantenimientoPreventivo\obj\Debug\net8.0\GestionMaestros.API.genruntimeconfig.cache
 C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\GestionDeFlotasYMantenimientoPreventivo\obj\Debug\net8.0\ref\GestionMaestros.API.dll
+C:\Users\Junior Tamayo\Desktop\herramientas_tarea_Oracle\GestionDeFlotasYMantenimientoPreventivo\GestionDeFlotasYMantenimientoPreventivo\obj\Debug\net8.0\GestionMaestros.API.sourcelink.json

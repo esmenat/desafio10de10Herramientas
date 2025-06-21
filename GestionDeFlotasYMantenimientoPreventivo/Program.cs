@@ -17,7 +17,6 @@ namespace GestionDeFlotasYMantenimientoPreventivo
                 ?? throw new InvalidOperationException("Connection string 'AppDbContext' not found.")));
 
             // Configuración de AutoMapper
-            builder.Services.AddAutoMapper(typeof(MappingProfile));  // Registra AutoMapper con el perfil de mapeo
             builder.Services
                 .AddControllers()
                 .AddNewtonsoftJson(
