@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Sistema.Modelos; // Asegúrate de que el modelo 'MantenimientoProgramado' esté disponible en esta ruta
 using Gestion.API.Consumer;
 using Sistema.Modelos.Modelos;
-using Microsoft.AspNetCore.Mvc.Rendering; // Asegúrate de que la clase Crud<MantenimientoProgramado> esté correctamente configurada
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization; // Asegúrate de que la clase Crud<MantenimientoProgramado> esté correctamente configurada
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class MantenimientosProgramadosController : Controller
     {
         // GET: MantenimientosProgramadosController
@@ -28,7 +30,8 @@ namespace Sistema.MVC.Controllers
         // GET: MantenimientosProgramadosController/Create
         public ActionResult Create()
         {
-       
+            ViewBag.Camiones = GetCamiones();
+            ViewBag.Talleres = GetTalleres();
             return View();
         }
         private List<SelectListItem> GetCamiones()
@@ -70,7 +73,9 @@ namespace Sistema.MVC.Controllers
         public ActionResult Edit(int id)
         {
             var mantenimiento = Crud<MantenimientoProgramado>.GetById(id);
-           
+            ViewBag.Camiones = GetCamiones();
+            ViewBag.Talleres = GetTalleres();
+
             return View(mantenimiento);
         }
 

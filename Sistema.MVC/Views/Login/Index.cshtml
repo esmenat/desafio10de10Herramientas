@@ -4,7 +4,6 @@
 
 <h1>Login</h1>
 
-<!-- Mostrar mensaje de error si las credenciales son incorrectas -->
 @if (!String.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
 {
     <div class="alert alert-danger">
@@ -22,8 +21,5 @@
         <input type="password" class="form-control" id="Contraseña" name="contrasena" required />
     </div>
 
-    <!-- Bajar el botón con margen adicional -->
     <button type="submit" class="btn btn-primary mt-3">Iniciar sesión</button>
 </form>
-
-

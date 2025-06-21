@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Sistema.Modelos; // Asegúrate de que el modelo 'Licencia' esté disponible en esta ruta
 using Gestion.API.Consumer;
 using Sistema.Modelos.Modelos;
-using Microsoft.AspNetCore.Mvc.Rendering; // Asegúrate de que la clase Crud<Licencia> esté correctamente configurada
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization; // Asegúrate de que la clase Crud<Licencia> esté correctamente configurada
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class LicenciasController : Controller
     {
         // GET: LicenciasController

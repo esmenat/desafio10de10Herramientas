@@ -36,3 +36,60 @@ html {
 body {
   margin-bottom: 60px;
 }
+/* Estilo para el fondo */
+body {
+    background-color: #f8d7e2; /* Fondo rosado claro */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilo para el contenedor del formulario */
+form {
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los títulos */
+h1 {
+    text-align: center;
+    color: #d63384; /* Color rosado */
+    font-size: 2rem;
+}
+
+/* Estilo para los inputs */
+input.form-control {
+    border-radius: 5px;
+    border: 1px solid #f1b6d9; /* Borde rosado suave */
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Estilo para el botón */
+button.btn-primary {
+    background-color: #d63384; /* Fondo rosado */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+    button.btn-primary:hover {
+        background-color: #b52a6b; /* Color rosado más oscuro en hover */
+    }
+
+/* Estilo para el mensaje de error */
+.alert-danger {
+    background-color: #f8d7e2;
+    color: #721c24;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

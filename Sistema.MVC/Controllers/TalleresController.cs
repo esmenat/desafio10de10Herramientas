@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Sistema.Modelos; // Asegúrate de que el modelo 'Taller' esté disponible en esta ruta
 using Gestion.API.Consumer;
-using Sistema.Modelos.Modelos; // Asegúrate de que la clase Crud<Taller> esté correctamente configurada
+using Sistema.Modelos.Modelos;
+using Microsoft.AspNetCore.Authorization; // Asegúrate de que la clase Crud<Taller> esté correctamente configurada
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class TalleresController : Controller
     {
         // GET: TalleresController

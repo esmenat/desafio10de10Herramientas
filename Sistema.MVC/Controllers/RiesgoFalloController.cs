@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System;
 using Sistema.Modelos.Modelos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class RiesgoFalloController : Controller
     {
         private readonly HttpClient _httpClient;

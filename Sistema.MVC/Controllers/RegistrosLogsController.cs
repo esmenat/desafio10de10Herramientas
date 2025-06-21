@@ -1,9 +1,11 @@
 ﻿using Gestion.API.Consumer;
 using Logs.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class RegistrosLogsController : Controller
     {
         // GET: RegistrosLogsController

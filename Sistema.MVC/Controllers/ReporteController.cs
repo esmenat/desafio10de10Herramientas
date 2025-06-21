@@ -5,9 +5,11 @@ using Sistema.Modelos.Modelos;
 using PdfSharpCore.Pdf;
 using PdfSharpCore.Drawing;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class ReporteController : Controller
     {
         private readonly HttpClient _httpClient;

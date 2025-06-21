@@ -1,5 +1,6 @@
 ﻿using Gestion.API.Consumer;
 using Logs.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,6 +8,7 @@ using Sistema.Modelos.Modelos;
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class TiposLogsController : Controller
     {
         // GET: TiposLogsController

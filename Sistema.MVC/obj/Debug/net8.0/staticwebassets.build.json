@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0TcPLz/rP7YsNebL6W+vDe12aD60lAjU5YcmLb/ukrw=",
+  "Hash": "6hmgDpPTdzzN2EFVzORKpcsHq5Giw61GaVzqWZhIw54=",
   "Source": "Sistema.MVC",
   "BasePath": "_content/Sistema.MVC",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8d47vn9ggq",
-      "Integrity": "3NyHwC5s3ksgYvP0oytxB7REFVjLRTFnKmj7H/5LNV0=",
+      "Fingerprint": "3l64ib9i97",
+      "Integrity": "qZfNbVd83tzH1miix42NW42jAbg9ICi90iSQk3LHujQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1321,7 +1321,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.8d47vn9ggq.css",
+      "Route": "css/site.3l64ib9i97.css",
       "AssetFile": "C:\\Users\\Junior Tamayo\\Desktop\\herramientas_tarea_Oracle\\GestionDeFlotasYMantenimientoPreventivo\\Sistema.MVC\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1331,7 +1331,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "611"
+          "Value": "1933"
         },
         {
           "Name": "Content-Type",
@@ -1339,11 +1339,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3NyHwC5s3ksgYvP0oytxB7REFVjLRTFnKmj7H/5LNV0=\""
+          "Value": "\"qZfNbVd83tzH1miix42NW42jAbg9ICi90iSQk3LHujQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 00:45:17 GMT"
+          "Value": "Sat, 21 Jun 2025 03:29:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1353,7 +1353,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8d47vn9ggq"
+          "Value": "3l64ib9i97"
         },
         {
           "Name": "label",
@@ -1361,7 +1361,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-3NyHwC5s3ksgYvP0oytxB7REFVjLRTFnKmj7H/5LNV0="
+          "Value": "sha256-qZfNbVd83tzH1miix42NW42jAbg9ICi90iSQk3LHujQ="
         }
       ]
     },
@@ -1376,7 +1376,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "611"
+          "Value": "1933"
         },
         {
           "Name": "Content-Type",
@@ -1384,11 +1384,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3NyHwC5s3ksgYvP0oytxB7REFVjLRTFnKmj7H/5LNV0=\""
+          "Value": "\"qZfNbVd83tzH1miix42NW42jAbg9ICi90iSQk3LHujQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 00:45:17 GMT"
+          "Value": "Sat, 21 Jun 2025 03:29:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1398,7 +1398,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3NyHwC5s3ksgYvP0oytxB7REFVjLRTFnKmj7H/5LNV0="
+          "Value": "sha256-qZfNbVd83tzH1miix42NW42jAbg9ICi90iSQk3LHujQ="
         }
       ]
     },

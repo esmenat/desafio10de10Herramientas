@@ -3,17 +3,18 @@ using Microsoft.AspNetCore.Mvc;
 using Sistema.Modelos; // Asegúrate de que el modelo 'Conductor' esté disponible en esta ruta
 using Gestion.API.Consumer;
 using Sistema.Modelos.Modelos;
-using Microsoft.AspNetCore.Mvc.Rendering; // Asegúrate de que la clase Crud<Conductor> esté correctamente configurada
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization; // Asegúrate de que la clase Crud<Conductor> esté correctamente configurada
 
 namespace Sistema.MVC.Controllers
 {
+    [Authorize]
     public class ConductoresController : Controller
     {
         // GET: ConductoresController
         public ActionResult Index()
         {
             var data = Crud<Conductor>.GetAll();
-           
             return View(data);
         }
 
@@ -27,7 +28,7 @@ namespace Sistema.MVC.Controllers
         // GET: ConductoresController/Create
         public ActionResult Create()
         {
-          
+            ViewBag.Camiones = GetCamiones();
             return View();
         }
         private List<SelectListItem> GetCamiones()
@@ -62,7 +63,7 @@ namespace Sistema.MVC.Controllers
         public ActionResult Edit(int id)
         {
             var data = Crud<Conductor>.GetById(id);
-          
+            ViewBag.Camiones = GetCamiones();
             return View(data);
         }
 
